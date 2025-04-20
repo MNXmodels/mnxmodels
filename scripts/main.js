@@ -1,8 +1,12 @@
 document.addEventListener('DOMContentLoaded', async () => {
     const contentDiv = document.getElementById('content');
+    if (!contentDiv) {
+        console.error('Content div not found');
+        return;
+    }
+
     const sections = ['hero', 'about', 'services', 'join', 'footer'];
 
-    // Load sections sequentially
     for (const section of sections) {
         try {
             const response = await fetch('./sections/' + section + '.html');
@@ -20,10 +24,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             const div = document.createElement('div');
             const sanitizedData = DOMPurify.sanitize(data);
+            console.log('DOMPurify:', DOMPurify);
             div.innerHTML = sanitizedData;
             contentDiv.appendChild(div);
         } catch (error) {
-            console.error('Error loading ' + section + '.html:', error);
+            console.error('Error loading section:', section, error);
         }
     }
 
@@ -67,6 +72,14 @@ document.addEventListener('DOMContentLoaded', async () => {
         favicon.rel = 'icon';
         favicon.href = config.icon;
         document.head.appendChild(favicon);
+
+        // Check for specific element
+        const element = document.querySelector('#some-id');
+        if (element) {
+            console.log(element.type);
+        } else {
+            console.error('Element not found');
+        }
     } catch (error) {
         console.error('Error initializing section scripts:', error);
     }
