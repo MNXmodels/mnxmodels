@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', async () => {
     const contentDiv = document.getElementById('content');
-    const sections = ['hero', 'about', 'services', 'join', 'footer'];
+    const sections = ['hero', 'about', 'services', 'join', 'footer']; // Ensure the order is correct
 
     // Load sections sequentially
     for (const section of sections) {
