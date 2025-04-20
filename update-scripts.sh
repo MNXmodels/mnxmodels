@@ -1,5 +1,5 @@
 #!/bin/bash
-cat > ~/Desktop/mnxmodels/scripts/main.js << 'INNER'
+cat > ~/Documents/mnxmodels/scripts/main.js << 'INNER'
 document.addEventListener('DOMContentLoaded', async () => {
     const contentDiv = document.getElementById('content');
     const sections = ['hero', 'about', 'services', 'join', 'footer'];
