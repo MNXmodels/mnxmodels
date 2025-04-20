@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "chrome",
+            "name": "https://github.com/MNXmodels/mnxmodels.git",
+            "request": "launch",
+            "url": "https://github.com/MNXmodels/mnxmodels.git"
+        }
+    ]
+}
