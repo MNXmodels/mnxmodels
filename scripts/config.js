@@ -1,7 +1,7 @@
 const config = {
     companyName: 'MNX Models',
     website: 'mnxmodels.com',
-    logo: '/assets/images/hero1.jpg',
+    logo: '/assets/images/logo.png',
     icon: '/assets/images/favicon.ico',
     email: 'join@mnxmodels.com',
     social: {

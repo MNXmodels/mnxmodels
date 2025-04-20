@@ -47,7 +47,8 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #ff69b4, #c71585) var(--hero-background, url('/assets/images/hero1.jpg')) center/cover no-repeat;
+    background: linear-gradient(135deg, rgba(255, 105, 180, 0.7), rgba(199, 21, 133, 0.7)), 
+                url('/assets/images/hero1.jpg') center/cover no-repeat;
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
@@ -65,7 +66,7 @@ header {
 .logo {
     width: 120px;
     margin-bottom: 1rem;
-    border: 2px solid #ffd700;
+   /* border: 2px solid #ffd700; */
     border-radius: 10px;
     transition: transform 0.3s;
 }
