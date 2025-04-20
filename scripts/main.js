@@ -1,11 +1,23 @@
 document.addEventListener('DOMContentLoaded', async () => {
     const contentDiv = document.getElementById('content');
     const sections = ['hero', 'about', 'services', 'join', 'footer'];
+
+    // Load sections sequentially
     for (const section of sections) {
         try {
             const response = await fetch('./sections/' + section + '.html');
             if (!response.ok) throw new Error('Failed to load ' + section + '.html');
-            const data = await response.text();
+            let data = await response.text();
+
+            // Replace placeholders with config values
+            data = data.replace('{{companyName}}', config.companyName)
+                      .replace('{{website}}', config.website)
+                      .replace('{{logo}}', config.logo)
+                      .replace('{{email}}', config.email)
+                      .replace('{{social.instagram}}', config.social.instagram)
+                      .replace('{{social.tiktok}}', config.social.tiktok)
+                      .replace('{{social.x}}', config.social.x);
+
             const div = document.createElement('div');
             div.innerHTML = data;
             contentDiv.appendChild(div);
@@ -13,7 +25,10 @@ document.addEventListener('DOMContentLoaded', async () => {
             console.error('Error loading ' + section + '.html:', error);
         }
     }
+
+    // Section-specific JavaScript
     try {
+        // Hero: Logo hover effect
         const logo = document.querySelector('.hero-content .logo');
         if (logo) {
             logo.addEventListener('mouseover', () => {
@@ -23,6 +38,8 @@ document.addEventListener('DOMContentLoaded', async () => {
                 logo.style.transform = 'scale(1)';
             });
         }
+
+        // Join: Form validation
         const form = document.querySelector('#join form');
         if (form) {
             form.addEventListener('submit', (event) => {
@@ -43,7 +60,16 @@ document.addEventListener('DOMContentLoaded', async () => {
                 console.log('Form submission validated');
             });
         }
+
+        // Set favicon dynamically
+        const favicon = document.createElement('link');
+        favicon.rel = 'icon';
+        favicon.href = config.icon;
+        document.head.appendChild(favicon);
     } catch (error) {
         console.error('Error initializing section scripts:', error);
     }
+
+    // Set CSS custom property for background image
+    document.documentElement.style.setProperty('--hero-background', 'url(' + config.logo + ')');
 });
