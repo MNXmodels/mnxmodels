@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Load sections sequentially
     for (const section of sections) {
         try {
-            const response = await fetch(`./sections/${section}.html`);
+            const response = await fetch(`/sections/${section}.html`);
             if (!response.ok) throw new Error(`Failed to load ${section}.html`);
             const data = await response.text();
             const div = document.createElement('div');
