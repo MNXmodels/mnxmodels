@@ -19,7 +19,8 @@ document.addEventListener('DOMContentLoaded', async () => {
                       .replace('{{social.x}}', config.social.x);
 
             const div = document.createElement('div');
-            div.innerHTML = data;
+            const sanitizedData = DOMPurify.sanitize(data);
+            div.innerHTML = sanitizedData;
             contentDiv.appendChild(div);
         } catch (error) {
             console.error('Error loading ' + section + '.html:', error);
@@ -40,11 +41,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
 
         // Join: Form validation
-        const form = document.querySelector('#join form');
+        const form = document.querySelector('#join-form');
         if (form) {
             form.addEventListener('submit', (event) => {
-                const nameInput = form.querySelector('input[name="name"]');
-                const emailInput = form.querySelector('input[name="email"]');
+                const nameInput = form.querySelector('#name');
+                const emailInput = form.querySelector('#email');
                 if (!nameInput.value.trim()) {
                     event.preventDefault();
                     alert('Please enter your name.');

@@ -1,9 +1,9 @@
 <section id="join">
     <h2>Join the Minx Vibe</h2>
     <p>Ready to flirt, shine, and earn? Sign up to start your naughty journey with {{companyName}}—no experience needed, just your unique spark!</p>
-    <form action="mailto:{{email}}" method="post" enctype="text/plain">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
+    <form id="join-form">
+        <input type="text" name="name" id="name" placeholder="Your Name" autocomplete="name" required>
+        <input type="email" name="email" id="email" placeholder="Your Email" autocomplete="email" required>
         <input type="text" name="onlyfans" placeholder="OnlyFans Handle (Optional)">
         <button type="submit">Let’s Get Flirty!</button>
     </form>
