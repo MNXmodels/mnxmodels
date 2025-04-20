@@ -1,5 +1,5 @@
 const config = {
-    companyName: 'Minx Models',
+    companyName: 'MNX Models',
     website: 'mnxmodels.com',
     logo: '/assets/images/hero1.jpg',
     icon: '/assets/images/favicon.ico',
