@@ -43,31 +43,16 @@ footer { animation: fadeIn 0.8s ease-out forwards 1s; }
 
 /* Header/Hero */
 header {
-    position: relative;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(135deg, #ff69b4, #c71585) url('../assets/images/hero1.jpg') center/cover no-repeat;
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    overflow: hidden;
-}
-
-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(255, 105, 180, 0.5), rgba(199, 21, 133, 0.5)), 
-                url('/assets/images/hero1.jpg') center/cover no-repeat;
-    z-index: -1;
-    opacity: 0.5; /* 50% transparency */
 }
 
 .hero-content {
-    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
