@@ -47,7 +47,9 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #ff69b4, #c71585) url('../assets/images/hero1.jpg') center/cover no-repeat;
+    background: #c71585; /* Fallback solid color */
+    background: linear-gradient(135deg, #ff69b4, #c71585), 
+                url('../assets/images/hero1.jpg') center/cover no-repeat;
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
