@@ -3,14 +3,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     const sections = ['hero', 'about', 'services', 'join', 'footer'];
     for (const section of sections) {
         try {
-            const response = await fetch(\`./sections/\${section}.html\`);
-            if (!response.ok) throw new Error(\`Failed to load \${section}.html\`);
+            const response = await fetch('./sections/' + section + '.html');
+            if (!response.ok) throw new Error('Failed to load ' + section + '.html');
             const data = await response.text();
             const div = document.createElement('div');
             div.innerHTML = data;
             contentDiv.appendChild(div);
         } catch (error) {
-            console.error(\`Error loading \${section}.html:\`, error);
+            console.error('Error loading ' + section + '.html:', error);
         }
     }
     try {
