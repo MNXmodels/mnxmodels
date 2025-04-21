@@ -5,8 +5,19 @@ const config = {
     icon: '/assets/images/favicon.ico',
     email: 'join@mnxmodels.com',
     social: {
-        instagram: 'https://www.instagram.com/mnxmodels',
-        tiktok: 'https://www.tiktok.com/@mnxmodels',
-        x: 'https://x.com/mnxmodels'
-    }
+        instagram: {
+            url: 'https://www.instagram.com/mnxmodels',
+            icon: '/assets/icons/instagram.svg' // Path to Instagram icon
+        },
+        tiktok: {
+            url: 'https://www.tiktok.com/@mnxmodels',
+            icon: '/assets/icons/tiktok.svg' // Path to TikTok icon
+        },
+        x: {
+            url: 'https://x.com/mnxmodels',
+            icon: '/assets/icons/x.svg' // Path to X (Twitter) icon
+        }
+    },
+    heroBackground: '/assets/images/hero1.jpg', // Path to the hero background image
+    heroBackgroundOpacity: 0.7 // Opacity for the background overlay (0 to 1)
 };

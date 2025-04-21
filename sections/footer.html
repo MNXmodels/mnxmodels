@@ -1,8 +1,14 @@
 <footer>
     <p>© 2025 {{companyName}}. All rights reserved.</p>
-    <p>
-        <a href="{{social.instagram}}" target="_blank">Instagram</a> |
-        <a href="{{social.tiktok}}" target="_blank">TikTok</a> |
-        <a href="{{social.x}}" target="_blank">X</a>
-    </p>
+    <div class="social-links">
+        <a href="{{social.instagram.url}}" target="_blank">
+            <img src="{{social.instagram.icon}}" alt="Instagram">
+        </a>
+        <a href="{{social.tiktok.url}}" target="_blank">
+            <img src="{{social.tiktok.icon}}" alt="TikTok">
+        </a>
+        <a href="{{social.x.url}}" target="_blank">
+            <img src="{{social.x.icon}}" alt="X (Twitter)">
+        </a>
+    </div>
 </footer>

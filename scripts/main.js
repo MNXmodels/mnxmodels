@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             if (!response.ok) throw new Error('Failed to load ' + section + '.html');
             let data = await response.text();
 
+            console.log('Before replacement:', data);
             // Replace placeholders with config values
             data = data.replace('{{companyName}}', config.companyName)
                       .replace('{{website}}', config.website)
@@ -20,11 +21,17 @@ document.addEventListener('DOMContentLoaded', async () => {
                       .replace('{{email}}', config.email)
                       .replace('{{social.instagram}}', config.social.instagram)
                       .replace('{{social.tiktok}}', config.social.tiktok)
-                      .replace('{{social.x}}', config.social.x);
+                      .replace('{{social.x}}', config.social.x)
+                      .replace('{{social.instagram.url}}', config.social.instagram.url)
+                      .replace('{{social.instagram.icon}}', config.social.instagram.icon)
+                      .replace('{{social.tiktok.url}}', config.social.tiktok.url)
+                      .replace('{{social.tiktok.icon}}', config.social.tiktok.icon)
+                      .replace('{{social.x.url}}', config.social.x.url)
+                      .replace('{{social.x.icon}}', config.social.x.icon);
+            console.log('After replacement:', data);
 
             const div = document.createElement('div');
             const sanitizedData = DOMPurify.sanitize(data);
-            console.log('DOMPurify:', DOMPurify);
             div.innerHTML = sanitizedData;
             contentDiv.appendChild(div);
         } catch (error) {
@@ -84,6 +91,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         console.error('Error initializing section scripts:', error);
     }
 
-    // Set CSS custom property for background image
-    document.documentElement.style.setProperty('--hero-background', 'url(' + config.logo + ')');
+    // Set CSS custom properties for the hero background and opacity
+    document.documentElement.style.setProperty('--hero-background', `url(${config.heroBackground})`);
+    document.documentElement.style.setProperty('--hero-opacity', config.heroBackgroundOpacity);
 });

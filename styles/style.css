@@ -47,8 +47,11 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, rgba(255, 105, 180, 0.7), rgba(199, 21, 133, 0.7)), 
-                url('/assets/images/hero1.jpg') center/cover no-repeat;
+    background: linear-gradient(
+                rgba(255, 105, 180, var(--hero-opacity, 0.7)), 
+                rgba(199, 21, 133, var(--hero-opacity, 0.7))
+              ), 
+              var(--hero-background, url('/assets/images/hero1.jpg')) center/cover no-repeat;
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
@@ -198,6 +201,25 @@ footer a {
 }
 
 footer a:hover { color: #ffec8b; }
+
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.social-links a img {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s ease;
+}
+
+.social-links a img:hover {
+    transform: scale(1.2);
+}
 
 /* Responsive */
 @media (max-width: 768px) {
