@@ -1,21 +1,21 @@
+#!/bin/bash
+cat > ~/Documents/mnxmodels/index.html << 'INNER'
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Your website description here">
-    <meta name="keywords" content="keyword1, keyword2, keyword3">
-    <title>Loading...</title> <!-- Placeholder title -->
+    <title>{{companyName}} - Unleash Your Minx</title>
     <link rel="stylesheet" href="./styles/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
     <script src="./scripts/config.js"></script>
-    <script src="./scripts/node_modules/dompurify/dist/purify.min.js"></script>
     <script src="./scripts/main.js"></script>
 </head>
 <body>
     <div id="content">
-        <!-- Sections will be dynamically loaded here -->
-        <img src="logo.png" alt="Company Logo">
+        <!-- Sections will be loaded here dynamically -->
     </div>
 </body>
 </html>
+INNER
+echo "Updated index.html"

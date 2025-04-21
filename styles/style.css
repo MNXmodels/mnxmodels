@@ -17,6 +17,8 @@
     --header-gradient-start: #ff69b4; /* Default Gradient Start */
     --header-gradient-end: #342d31; /* Default Gradient End */
     --header-gradient-opacity: 0.5; /* Default Gradient Transparency */
+    --header-gradient-start-rgba: rgba(0, 0, 0, 0.8);
+    --header-gradient-end-rgba: rgba(255, 255, 255, 0.8);
 }
 
 body {
@@ -262,4 +264,10 @@ social-links a img:hover {
     .services-grid { grid-template-columns: 1fr; }
     #join form { gap: 0.8rem; }
     section::before, footer::before { width: 80%; }
+    .header {
+        font-size: 1.2rem;
+    }
+    .content {
+        padding: 10px;
+    }
 }
