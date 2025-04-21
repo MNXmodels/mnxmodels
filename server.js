@@ -31,6 +31,17 @@ app.post('/save-config', (req, res) => {
 // Serve static files (e.g., HTML, CSS, JS)
 app.use(express.static(path.join(__dirname)));
 
+// Handle 404 errors
+app.use((req, res, next) => {
+  res.status(404).send("Page not found");
+});
+
+// Handle other errors
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send("Something went wrong!");
+});
+
 // Start the server
 app.listen(PORT, () => {
     console.log(`Server is running at http://localhost:${PORT}`);

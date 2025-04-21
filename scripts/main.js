@@ -183,3 +183,16 @@ document.addEventListener('DOMContentLoaded', () => {
     root.style.setProperty('--hero-background', `url(${config.heroBackground})`);
     root.style.setProperty('--hero-opacity', config.heroBackgroundOpacity);
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const companyName = config.companyName || "Default Company";
+  document.querySelectorAll("[data-placeholder='companyName']").forEach((el) => {
+    el.textContent = companyName;
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const dynamicContent = '<div>Dynamic content with placeholders</div>';
+    const sanitizedContent = DOMPurify.sanitize(dynamicContent);
+    document.getElementById("content").innerHTML = sanitizedContent;
+});
