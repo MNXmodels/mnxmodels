@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => { // Mark the function as async
     console.log('Config loaded:', config);
 
     // Replace placeholders in the HTML
@@ -85,9 +85,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            const response = await fetch(`./sections/${section}.html`);
+            const response = await fetch(`./sections/${section}.html`); // Await works here
             if (!response.ok) throw new Error(`Failed to load ${section}.html`);
-            let data = await response.text();
+            let data = await response.text(); // Await works here
 
             // Replace placeholders with config values
             data = data.replace(/{{companyName}}/g, config.companyName)
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const div = document.createElement('div');
             div.id = section;
             div.innerHTML = sanitizedData;
-            contentDiv.appendChild(div);
+            document.getElementById('content').appendChild(div);
         } catch (error) {
             console.error(`Error loading section "${section}":`, error);
         }
