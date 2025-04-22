@@ -15,11 +15,11 @@ const config = {
     },
     heroBackground: "/assets/images/hero1.jpg",
     heroBackgroundOpacity: 0.7,
-    logo: "/assets/images/logo.png",
+    logo: "/assets/logos/logo.png",
     paths: {
         styles: "/styles/style.css",
         config: "/scripts/config.js",
-        domPurify: "/scripts/node_modules/dompurify/dist/purify.min.js",
+        domPurify: "/node_modules/dompurify/dist/purify.min.js",
         mainScript: "/scripts/main.js"
     },
     social: {

@@ -1,21 +1,19 @@
-document.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener('DOMContentLoaded', () => {
     console.log('Config loaded:', config);
 
     // Replace placeholders in the HTML
     document.title = config.companyName; // Replace the title placeholder
 
     // Replace placeholders in the <head>
-    const head = document.head.innerHTML
+    document.head.innerHTML = document.head.innerHTML
         .replace(/{{stylesPath}}/g, config.paths.styles)
         .replace(/{{configPath}}/g, config.paths.config)
         .replace(/{{domPurifyPath}}/g, config.paths.domPurify)
         .replace(/{{mainScriptPath}}/g, config.paths.mainScript);
-    document.head.innerHTML = head;
 
     // Replace placeholders in the <body>
-    const body = document.body.innerHTML
+    document.body.innerHTML = document.body.innerHTML
         .replace(/{{logoPath}}/g, config.logo);
-    document.body.innerHTML = body;
 
     // Helper function to convert HEX to RGB
     const hexToRgb = (hex) => {
