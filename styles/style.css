@@ -20,7 +20,7 @@
     --header-gradient-start: #ff69b4;
     --header-gradient-end: #c71585;
     --header-gradient-opacity: 0.5;
-    --footer-background-color: #333333; /* Grey color for footer */
+    --footer-background-color: #333333;
 }
 
 /* Global Styles */
@@ -84,7 +84,7 @@ footer {
     transition: transform 0.3s ease;
 }
 
-.social-icons img:hover {
+social-icons img:hover {
     transform: scale(1.2);
 }
 

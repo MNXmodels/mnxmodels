@@ -6,10 +6,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Replace placeholders in the <head>
     const head = document.head.innerHTML
-        .replace(/{{stylesPath}}/g, './styles/style.css')
-        .replace(/{{configPath}}/g, './scripts/config.js')
-        .replace(/{{domPurifyPath}}/g, './scripts/node_modules/dompurify/dist/purify.min.js')
-        .replace(/{{mainScriptPath}}/g, './scripts/main.js');
+        .replace(/{{stylesPath}}/g, config.paths.styles)
+        .replace(/{{configPath}}/g, config.paths.config)
+        .replace(/{{domPurifyPath}}/g, config.paths.domPurify)
+        .replace(/{{mainScriptPath}}/g, config.paths.mainScript);
     document.head.innerHTML = head;
 
     // Replace placeholders in the <body>
