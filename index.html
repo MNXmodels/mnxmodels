@@ -5,17 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Your website description here">
     <meta name="keywords" content="keyword1, keyword2, keyword3">
-    <title>Loading...</title> <!-- Placeholder title -->
-    <link rel="stylesheet" href="./styles/style.css">
+    <title>{{companyName}}</title> <!-- Placeholder for the company name -->
+    <link rel="stylesheet" href="{{stylesPath}}"> <!-- Placeholder for styles -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
-    <script src="./scripts/config.js"></script>
-    <script src="./scripts/node_modules/dompurify/dist/purify.min.js"></script>
-    <script src="./scripts/main.js"></script>
+    <script src="{{configPath}}"></script> <!-- Placeholder for config.js -->
+    <script src="{{domPurifyPath}}"></script> <!-- Placeholder for DOMPurify -->
+    <script src="{{mainScriptPath}}"></script> <!-- Placeholder for main.js -->
 </head>
 <body>
+    <header>
+        <img src="{{logoPath}}" alt="Company Logo" class="logo"> <!-- Placeholder for logo -->
+    </header>
     <div id="content">
         <!-- Sections will be dynamically loaded here -->
-        <img src="logo.png" alt="Company Logo">
     </div>
+    <footer>
+        <!-- Social icons will be dynamically loaded here -->
+    </footer>
 </body>
 </html>
