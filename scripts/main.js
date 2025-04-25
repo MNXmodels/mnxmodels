@@ -1,19 +1,24 @@
 document.addEventListener('DOMContentLoaded', async () => { // Mark the function as async
     console.log('Config loaded:', config);
+    console.log('Config object:', config);
 
     // Replace placeholders in the HTML
     document.title = config.companyName; // Replace the title placeholder
 
     // Replace placeholders in the <head>
+    console.log('Before replacement (head):', document.head.innerHTML);
     document.head.innerHTML = document.head.innerHTML
         .replace(/{{stylesPath}}/g, config.paths.styles)
         .replace(/{{configPath}}/g, config.paths.config)
         .replace(/{{domPurifyPath}}/g, config.paths.domPurify)
         .replace(/{{mainScriptPath}}/g, config.paths.mainScript);
+    console.log('After replacement (head):', document.head.innerHTML);
 
     // Replace placeholders in the <body>
+    console.log('Before replacement (body):', document.body.innerHTML);
     document.body.innerHTML = document.body.innerHTML
         .replace(/{{logoPath}}/g, config.logo);
+    console.log('After replacement (body):', document.body.innerHTML);
 
     // Helper function to convert HEX to RGB
     const hexToRgb = (hex) => {
@@ -112,4 +117,23 @@ document.addEventListener('DOMContentLoaded', async () => { // Mark the function
             console.error(`Error loading section "${section}":`, error);
         }
     }
+
+    // Dynamically inject styles
+    const stylesLink = document.createElement('link');
+    stylesLink.rel = 'stylesheet';
+    stylesLink.href = config.paths.styles;
+    document.head.appendChild(stylesLink);
+
+    // Dynamically inject DOMPurify
+    const domPurifyScript = document.createElement('script');
+    domPurifyScript.src = config.paths.domPurify;
+    document.head.appendChild(domPurifyScript);
+
+    // Dynamically inject main.js
+    const mainScript = document.createElement('script');
+    mainScript.src = config.paths.mainScript;
+    document.head.appendChild(mainScript);
+
+    // Set the title
+    document.title = config.companyName;
 });

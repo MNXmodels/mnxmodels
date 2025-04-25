@@ -6,11 +6,7 @@
     <meta name="description" content="Your website description here">
     <meta name="keywords" content="keyword1, keyword2, keyword3">
     <title>{{companyName}}</title> <!-- Placeholder for the company name -->
-    <link rel="stylesheet" href="{{stylesPath}}"> <!-- Placeholder for styles -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
-    <script src="{{configPath}}"></script> <!-- Placeholder for config.js -->
-    <script src="{{domPurifyPath}}"></script> <!-- Placeholder for DOMPurify -->
-    <script src="{{mainScriptPath}}"></script> <!-- Placeholder for main.js -->
 </head>
 <body>
     <header>
@@ -18,5 +14,11 @@
     </header>
     <div id="content"></div>
     <footer></footer>
+
+    <!-- Move scripts and styles here -->
+    <link rel="stylesheet" href="/styles/style.css">
+    <script src="/scripts/config.js"></script>
+    <script src="/node_modules/dompurify/dist/purify.min.js"></script>
+    <script src="/scripts/main.js"></script>
 </body>
 </html>
